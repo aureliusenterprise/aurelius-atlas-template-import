@@ -10,10 +10,12 @@ there is no central index.
 ## Quick Start
 
 1. **Install dependencies**: `npm ci` (root) + `uv sync` + `./gradlew dependencies` (Java)
-2. **Run an app**: `npx nx serve <project>` — required dev infrastructure (Keycloak, Postgres,
-   Kafka, observability) starts automatically via target `dependsOn`; there is no root compose file.
-3. **Run pre-commit**: `pre-commit run --all-files` (fix any issues)
-4. **Verify**: `nx run-many --target=test -c ci` (or target a specific project)
+2. **Docker Hub login**: `docker login` — all base/infra images come from `dhi.io` (Docker Hardened Images)
+   and pulls fail as `unauthorized` without it.
+3. **Run an app**: `npx nx serve <project>` — required dev infrastructure (Keycloak, Postgres, Kafka,
+   observability) starts automatically via target `dependsOn`; there is no root compose file.
+4. **Run pre-commit**: `pre-commit run --all-files` (fix any issues)
+5. **Verify**: `nx run-many --target=test -c ci` (or target a specific project)
 
 > [!WARNING]
 > Fresh clones fail tests until a SOPS age key exists (`secrets/keys.txt`, generated on first
