@@ -14,7 +14,8 @@ the rest of that slice.
   settings, Avro deserializer/serializer (header schema-id framing,
   `RecordNameStrategy` naming), and the Confluent producer.
 - `processor.py` — base64-decodes MSK event payloads and round-trips each record.
-- The image extends `docker/aurelius-aws-lambda-base` (pinned by version tag); the
+- The image extends `docker/aurelius-aws-lambda-base` (resolved via
+  `--build-arg VERSION`, `local` by default); the
   entrypoint resolves the handler as `aurelius_aws_lambda_example.main`.
 
 ## Workspace dependencies

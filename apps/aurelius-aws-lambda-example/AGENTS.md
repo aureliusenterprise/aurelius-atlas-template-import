@@ -23,8 +23,9 @@ specific to this app; workspace-wide rules live in the root `AGENTS.md`.
 - `project.json` — `implicitDependencies`: `aurelius-aws-lambda`, `aurelius-kafka`,
   `aurelius-example`, `aurelius-dev-kafka`, `aurelius-aws-lambda-base`.
 - `Dockerfile` — `FROM ghcr.io/aureliusenterprise/aurelius-aws-lambda-base:${VERSION}`
-  and `CMD aurelius_aws_lambda_example.main`. Bumping the base image means
-  releasing it first; `nx release` keeps `${VERSION}` in sync.
+  and `CMD aurelius_aws_lambda_example.main`. The base image is not semver-versioned
+  (noop version actions), so `${VERSION}` resolves to the `local` default and the
+  base is consumed as a rebuilt `local`/`latest` image, not a pinned release tag.
 - `pyproject.toml` — workspace deps via `[tool.uv.sources] workspace = true`.
 - `mkdocs.yaml` — API reference page under `docs/api-reference/apps/`.
 
