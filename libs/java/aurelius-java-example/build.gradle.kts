@@ -12,7 +12,7 @@ nx {
     }
 }
 
-version = "0.6.0"
+version = "0.6.1"
 
 plugins {
     id("com.github.davidmc24.gradle.plugin.avro").version("1.9.1")
