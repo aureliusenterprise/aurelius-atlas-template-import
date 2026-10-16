@@ -3,5 +3,10 @@
     "version": "phase0-0.1-adopt-template",
     "title": "phase0-0.1-adopt-template",
     "aliases": []
+  },
+  {
+    "version": "chore-refound-sops-trust",
+    "title": "chore-refound-sops-trust",
+    "aliases": []
   }
 ]
